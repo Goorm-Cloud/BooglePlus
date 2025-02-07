@@ -32,7 +32,7 @@ COPY --from=build /app/build/libs/*.jar app.jar
 EXPOSE 8080
 
 # Set environment variables (MySQL connection)
-ENV SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/BooglePlus?serverTimezone=UTC&characterEncoding=UTF-8
+ENV SPRING_DATASOURCE_URL=jdbc:mysql://mysql/BooglePlus?serverTimezone=UTC&characterEncoding=UTF-8
 ENV SPRING_DATASOURCE_USERNAME=boogleplus
 ENV SPRING_DATASOURCE_PASSWORD=00000000
 

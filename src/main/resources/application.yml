@@ -7,12 +7,12 @@ spring:
       initialize-schema: embedded
   profiles:
     active: prod
-#  datasource:
-#    type: com.zaxxer.hikari.HikariDataSource
-#    hikari:
-#      minimum-idle: 5
-#      maximum-pool-size: 10
-#      pool-name: HikariCP
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 10
+      pool-name: HikariCP
 springfox:
   documenration:
     swagger:

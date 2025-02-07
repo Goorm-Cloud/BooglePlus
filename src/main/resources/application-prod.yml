@@ -14,7 +14,7 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://192.168.64.12:3306/BooglePlus}
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://192.168.64.17:3306/BooglePlus}
     username: ${SPRING_DATASOURCE_USERNAME:boogleplus}
     password: ${SPRING_DATASOURCE_PASSWORD:00000000}
 
