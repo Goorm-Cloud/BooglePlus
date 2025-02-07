@@ -3,8 +3,8 @@ package com.kernel360.boogle.member.controller;
 import com.kernel360.boogle.global.error.exception.BusinessException;
 import com.kernel360.boogle.member.model.MemberSignupDTO;
 import com.kernel360.boogle.member.service.MemberService;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +27,9 @@ public class SignupController {
     }
 
     @PostMapping
-    @ApiResponses({@ApiResponse(code = 409, message = "이미 등록된 유저입니다.")})
+    @ApiResponses({
+            @ApiResponse(responseCode = "409", description = "이미 등록된 유저입니다.")
+    })
     public String signup(@Valid @ModelAttribute MemberSignupDTO memberSignupDTO,
                          BindingResult bindingResult, Model model) {
 

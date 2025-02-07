@@ -3,14 +3,13 @@ package com.kernel360.boogle.bookreport.controller;
 import com.kernel360.boogle.bookreport.db.BookReportEntity;
 import com.kernel360.boogle.bookreport.model.BookReportDTO;
 import com.kernel360.boogle.bookreport.service.BookReportService;
-import com.kernel360.boogle.global.batch.MailForNewRelease;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-@Api(tags = {"독후감 관련 Admin API"})
+@Tag(name = "독후감 관련 Admin API")
 @RestController
 @Slf4j
 public class BookReportAdminController {

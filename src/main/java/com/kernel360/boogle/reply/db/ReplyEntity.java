@@ -17,7 +17,8 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity(name = "REPLY")
+@Table(name = "REPLY")
+@Entity
 @EntityListeners(AuditingEntityListener.class)
 public class ReplyEntity {
 

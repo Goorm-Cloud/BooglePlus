@@ -1,29 +1,41 @@
 spring:
   flyway:
-    enabled: true
-    baseline-on-migrate: true
+    enabled: true  # Flyway 활성화
+    baseline-on-migrate: true  # 기존 DB에서도 마이그레이션 실행 가능
+    validate-on-migrate: true  # 마이그레이션 파일 유효성 검증
+    locations: classpath:db/migration  # SQL 파일이 위치한 폴더
+
   jpa:
     show-sql: true
     properties:
       format_sql: true
       dialect: org.hibernate.dialect.MySQL8Dialect
       hibernate:
-        ddl-auto: validate
+        ddl-auto: none  # Hibernate가 테이블을 생성하지 않도록 설정
+        show_sql: true
+      database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    defer-datasource-initialization: true  # Flyway가 먼저 실행된 후 데이터 소스를 초기화
+
   datasource:
-    driver-class name: com.mysql.cj.jdbc.Driver
-    url: ENC(6JQHjqQjEGeJ6jfG+S1EKlQxkHRBhIT4r0rVQTLjjNs37JbuGNQHpEXL1MQ+ZRdpoHR3wZzpzncoCNGfbYk7Jd3Cq+8Y+4dAuAgfzvSphqUtrxDS1Qt6qAJi75uPXmJS3lyFh1uKJbSZe8avOBIB6z1phkGdM0utzSSAsVaMl0Un0vE9oxb3nFTH7HcifF2kp1jaauvYxJwAlYbSomNR0KM1Cmt7J1gurNBBFPbG8JmcFG3eZJbZrRECGO0w8jbXU0Uf/c3Ffk0AYwxzcjetkuRkb0wUhwHHO1MGre17owY=)
-    username: ENC(4qqyBBJ1/pEgP875b4FekQ5lrFb+jURl)
-    password: ENC(kyGOSFcvu+N8Ef7I5YSLQe4TilwCXjG1JjxpM+0aZ4BzVfuRxbK+CAWiYiqwccoh)
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.64.17:3306/BooglePlus?serverTimezone=UTC&characterEncoding=UTF-8
+    username: boogleplus
+    password: '00000000'
+    hikari:
+      connection-timeout: 30000
 
 decorator:
   datasource:
     p6spy:
-      enable-logging: true
+      enable-logging: true  # SQL 로그 기록 활성화
 
 logging:
+  level:
+    root: INFO
+    org.springframework: INFO
   file:
     path: ./logs
     name: log
@@ -31,10 +43,8 @@ logging:
     rollingpolicy:
       max-history: 20
       total-size-cap: 100MB
+      max-file-size: 10MB
 
-jasypt:
-  encryptor:
-    algorithm: PBEWithMD5AndTripleDES
 aladin:
   api:
     ttb-key: ENC(Jem/KbwMCD0y1OKbM+9vWzVpE116xZfxVl2kRL1YYUoqFUjYnoZ3Tw==)

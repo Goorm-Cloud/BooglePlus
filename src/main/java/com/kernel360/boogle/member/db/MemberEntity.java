@@ -19,11 +19,12 @@ import java.util.Collections;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity(name = "MEMBER")
+@Table(name = "MEMBER")
+@Entity
 @EntityListeners(AuditingEntityListener.class)
 public class MemberEntity implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "id")
     private Long id;
 

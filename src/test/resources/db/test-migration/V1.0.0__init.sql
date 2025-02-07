@@ -1,4 +1,4 @@
--- E2E_BOOGLE.BOOK definition
+-- booglePlust.BOOK definition
 CREATE TABLE `BOOK` (
                         `ID` bigint NOT NULL AUTO_INCREMENT,
                         `TITLE` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE `BOOK` (
 ) ENGINE=InnoDB AUTO_INCREMENT=160 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
--- E2E_BOOGLE.BOOK_REPORT definition
+-- booglePlust.BOOK_REPORT definition
 CREATE TABLE `BOOK_REPORT` (
                                `ID` bigint NOT NULL AUTO_INCREMENT,
                                `BOOK_ID` bigint NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `BOOK_REPORT` (
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
--- E2E_BOOGLE.`MEMBER` definition
+-- booglePlust.`MEMBER` definition
 CREATE TABLE `MEMBER` (
                           `ID` bigint NOT NULL AUTO_INCREMENT,
                           `EMAIL` varchar(100) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `MEMBER` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
--- E2E_BOOGLE.REPLY definition
+-- booglePlust.REPLY definition
 CREATE TABLE `REPLY` (
                          `ID` bigint NOT NULL AUTO_INCREMENT,
                          `MEMBER_ID` bigint NOT NULL,

@@ -7,7 +7,7 @@ import com.kernel360.boogle.book.model.BookViewRequest;
 import com.kernel360.boogle.book.service.BookService;
 import com.kernel360.boogle.member.db.MemberEntity;
 import com.kernel360.boogle.member.model.MemberDTO;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -15,7 +15,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-@Api(tags = {"도서 관련 Admin API"})
+@Tag(name = "도서 관련 Admin API")
 @RestController
 @Slf4j
 public class BookAdminController {

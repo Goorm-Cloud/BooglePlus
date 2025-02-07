@@ -9,6 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BoogleApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(BoogleApplication.class, args);
+		try {
+			SpringApplication.run(BoogleApplication.class, args);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.exit(1);
+		}
 	}
 }

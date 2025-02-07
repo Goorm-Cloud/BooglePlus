@@ -20,7 +20,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
 
-
+    @Transactional
     public MemberEntity signup(MemberSignupDTO member) {
         if (memberRepository.findByEmail(member.getEmail()) != null) {
             throw new BusinessException(MemberErrorCode.ALREADY_SIGNED_UP_MEMBER);
@@ -35,7 +35,7 @@ public class MemberService {
                 .role(MemberRole.ROLE_USER)
                 .build());
     }
-
+    @Transactional
     public MemberEntity signupAdmin(MemberSignupDTO member) {
         if (memberRepository.findByEmail(member.getEmail()) != null) {
             throw new BusinessException(MemberErrorCode.ALREADY_SIGNED_UP_MEMBER);
@@ -61,15 +61,17 @@ public class MemberService {
         memberEntity.setEmail(memberDTO.getEmail());
         memberEntity.setPhoneNumber(memberDTO.getPhoneNumber());
     }
-
-        public MemberEntity findByEmail(String email) {
+    @Transactional(readOnly = true)
+    public MemberEntity findByEmail(String email) {
         return memberRepository.findByEmail(email);
     }
 
-    public MemberEntity findById(Long id){
+    @Transactional(readOnly = true)
+    public MemberEntity findById(Long id) {
         return memberRepository.findById(id).orElse(null);
     }
 
+    @Transactional(readOnly = true)
     public MemberDataDTO findByIdForDashboard(Long id) {
         MemberEntity memberEntity = memberRepository.findById(id).get();
         return MemberDataDTO.builder()

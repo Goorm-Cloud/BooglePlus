@@ -5,7 +5,7 @@ import com.kernel360.boogle.book.model.BookSearchType;
 import com.kernel360.boogle.book.service.BookService;
 import com.kernel360.boogle.bookreport.db.BookReportEntity;
 import com.kernel360.boogle.bookreport.service.BookReportService;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 import java.util.Optional;
 
-@Api(tags = "도서 관련 User API")
+@Tag(name = "도서 관련 User API")
 @RestController
 public class BookController {
 

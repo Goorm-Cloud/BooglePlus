@@ -9,10 +9,10 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Entity(name = "MEMBER_INFLOW")
+@Table(name = "MEMBER_INFLOW")
+@Entity
 public class MemberInflowEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue
     @Column(name = "id")
     private Long id;
 

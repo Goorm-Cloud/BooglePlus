@@ -17,11 +17,12 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity(name = "BOOK_REPORT")
+@Table(name = "BOOK_REPORT")
+@Entity
 @EntityListeners(AuditingEntityListener.class)
 public class BookReportEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "id", nullable = false)
     private Long id;
 

@@ -1,6 +1,6 @@
 spring:
   flyway:
-    enabled: true
+    enabled: false
     baseline-on-migrate: true
   jpa:
     show-sql: true
@@ -8,15 +8,16 @@ spring:
       format_sql: true
       dialect: org.hibernate.dialect.MySQL8Dialect
       hibernate:
-        ddl-auto: validate
+        ddl-auto: create
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   datasource:
-    driver-class name: com.mysql.cj.jdbc.Driver
-    url: ${url}
-    username: ${username}
-    password: ${password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.64.17:3306/BooglePlus
+    username: boogleplus
+    password: '00000000'
+
 logging:
   file:
     path: /var/log/applog/boogle
@@ -25,6 +26,7 @@ logging:
     rollingpolicy:
       max-history: 20
       total-size-cap: 100MB
+
 aladin:
   api:
     ttb-key: ${ttb-key}
@@ -33,4 +35,4 @@ aladin:
     book-list.url: http://www.aladin.co.kr/ttb/api/ItemList.aspx
     book-detail.url: http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx
 server:
-  port: 8421
+  port: 8080

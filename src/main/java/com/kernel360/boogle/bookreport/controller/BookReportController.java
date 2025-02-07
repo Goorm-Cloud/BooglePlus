@@ -8,7 +8,7 @@ import com.kernel360.boogle.member.model.MemberDTO;
 import com.kernel360.boogle.reply.model.ReplyDTO;
 import com.kernel360.boogle.reply.model.ReplyResponse;
 import com.kernel360.boogle.reply.service.ReplyService;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-@Api(tags = {"독후감 관련 API"})
+@Tag(name = "독후감 관련 API")
 @RestController
 @Slf4j
 public class BookReportController {

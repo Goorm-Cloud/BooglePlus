@@ -5,6 +5,14 @@ spring:
   batch:
     jdbc:
       initialize-schema: embedded
+  profiles:
+    active: prod
+#  datasource:
+#    type: com.zaxxer.hikari.HikariDataSource
+#    hikari:
+#      minimum-idle: 5
+#      maximum-pool-size: 10
+#      pool-name: HikariCP
 springfox:
   documenration:
     swagger:
@@ -14,4 +22,13 @@ thymeleaf:
   check-template-location: true
   prefix: classpath:/templates/
   suffix: .html
+
   enabled: true
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+

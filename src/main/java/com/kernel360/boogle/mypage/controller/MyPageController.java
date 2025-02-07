@@ -6,7 +6,7 @@ import com.kernel360.boogle.member.service.MemberService;
 import com.kernel360.boogle.mypage.model.MemberRequestDTO;
 import com.kernel360.boogle.mypage.service.MyPageService;
 import com.kernel360.boogle.reply.service.ReplyService;
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 import java.util.Map;
 
-@Api(tags = {"마이페이지 관련 API"})
+@Tag(name = "마이페이지 관련 API")
 @RestController
 @RequiredArgsConstructor
 @Slf4j
