@@ -11,13 +11,13 @@ spring:
       format_sql: true
       dialect: org.hibernate.dialect.MySQL8Dialect
       hibernate:
-        ddl-auto: none  # Hibernate가 테이블을 생성하지 않도록 설정
+        ddl-auto: create
         show_sql: true
       database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-    defer-datasource-initialization: true  # Flyway가 먼저 실행된 후 데이터 소스를 초기화
+#    defer-datasource-initialization: true  # Flyway가 먼저 실행된 후 데이터 소스를 초기화
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -27,10 +27,10 @@ spring:
     hikari:
       connection-timeout: 30000
 
-decorator:
-  datasource:
-    p6spy:
-      enable-logging: true  # SQL 로그 기록 활성화
+#decorator:
+#  datasource:
+#    p6spy:
+#      enable-logging: true  # SQL 로그 기록 활성화
 
 logging:
   level:

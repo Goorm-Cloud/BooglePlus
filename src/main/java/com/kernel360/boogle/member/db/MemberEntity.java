@@ -24,7 +24,7 @@ import java.util.Collections;
 @EntityListeners(AuditingEntityListener.class)
 public class MemberEntity implements UserDetails {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 

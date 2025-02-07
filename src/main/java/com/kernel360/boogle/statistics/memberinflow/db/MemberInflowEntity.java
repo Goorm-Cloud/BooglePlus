@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Table(name = "MEMBER_INFLOW")
 @Entity
 public class MemberInflowEntity {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
